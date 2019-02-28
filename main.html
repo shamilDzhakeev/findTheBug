@@ -9,12 +9,16 @@
     <body>
         <fieldset>
             <legend class="summary">Корень n-ой степени</legend>
-            <label class="sqrtChar" for="numberBox"><p>√</p></label>
-            <input type="text" class="numberBox" id="numberBox" placeholder="Корень">
-            <input type="text" class="valueBox" id="valueBox" placeholder="Число">
-            <label><p class="equalChar">=</p></label>
-            <p class="resultLabel" id="resultDiv">Результат</p>
-            <input type="button" class="button" id="getResult" value="Извлечь" onclick="showResult()">
+            
+            <input type="text" class="boxes numberBox" placeholder="Корень">
+            <p class="sqrtChar">√</p>
+            <input type="text" class="boxes valueBox" placeholder="Число">
+            <p class="equalChar">=</p>
+            <p class="resultLabel">Результат</p>
+            <form>
+                <input type="button" class="button" value="Извлечь" onclick="showResult()">
+            </form>
+            
         </fieldset>
         <script src="mainscript.js"></script>
     </body>

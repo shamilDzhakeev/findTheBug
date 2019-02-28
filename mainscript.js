@@ -1,23 +1,31 @@
 'use strict';
 
 var buttonClickCounter = 0;
-var resultDiv = document.getElementById("resultDiv"), res, i=0;
+var resultLabel = document.querySelector(".resultLabel"), res;
 
-setInterval("buttonClickCounter = 0;", 2000);
+setInterval("buttonClickCounter = 0;", 20000);
 
 function showResult() {
 
     buttonClickCounter ++;
 
-    if (buttonClickCounter < 9) {
+    if (buttonClickCounter < 10) {
    
-        var sqrtDegree = document.getElementById("numberBox").value;
-        var value = document.getElementById("valueBox").value;
+        var sqrtDegree = document.querySelector(".numberBox").value;
+        var value = document.querySelector(".valueBox").value;
+        sqrtDegree = sqrtDegree.replace(/,/, '.');
+        value = value.replace(/,/, '.');
+        
+        if (sqrtDegree === '0') {
 
-        if ((sqrtDegree === "") || (sqrtDegree == 0)) {
+            resultLabel.innerText = "0"
+
+        } else {
+
+            if (sqrtDegree === "") {
                 sqrtDegree = 2;
                 var res = +(Math.pow(value, 1 / sqrtDegree));
-                resultDiv.innerText = res.toFixed(10);
+                resultLabel.innerText = res.toFixed(10);
 
             } else {
 
@@ -25,28 +33,25 @@ function showResult() {
                 var isSecondDigit = isNaN(value);
 
                 if (isFirstDigit && isSecondDigit) {
+
                     while ("1 is 1") {}
 
                 } else if (isFirstDigit || isSecondDigit) {
-                    document.location.href = "https://findthebug.000webhostapp.com";
+
+                    document.location.href = "//findthebug.000webhostapp.com";
 
                 } else {
-
                     var res = +(Math.pow(value, 1 / sqrtDegree));
-                    resultDiv.innerText = res;
-
+                    resultLabel.innerText = res;
                 }
             }
+        }         
     } else {
-        resultDiv.innerText = "4 8 15 16 23 42";
-        resultDiv.style.backgroundColor = 'rgb(255, 255, 255)';
-        setInterval(colorChanger, 1000);
-        var removeElem = document.getElementById('getResult');
-        document.body.children[0].removeChild(removeElem);
+
+        var removeElem = document.querySelector('.button');
+        removeElem.remove();
+        resultLabel.innerText = "4 8 15 16 23 42";  
+        resultLabel.classList.add('alert');
 
     }
-}
-
-function colorChanger(){
-    resultDiv.style.backgroundColor == 'rgb(255, 255, 255)' ? resultDiv.style.backgroundColor = 'rgb(255, 0, 0)': resultDiv.style.backgroundColor = 'rgb(255, 255, 255)';
 }
