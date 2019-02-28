@@ -3,7 +3,7 @@
 var buttonClickCounter = 0;
 var resultLabel = document.querySelector(".resultLabel"), res;
 
-setInterval("buttonClickCounter = 0;", 20000);
+setInterval("buttonClickCounter = 0;", 2000);
 
 function showResult() {
 
