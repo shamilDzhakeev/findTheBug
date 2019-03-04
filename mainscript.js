@@ -1,7 +1,7 @@
 'use strict';
 
 var buttonClickCounter = 0;
-var resultLabel = document.querySelector(".resultLabel"), res;
+var resultLabel = document.querySelector(".resultLabel");
 
 setInterval("buttonClickCounter = 0;", 2000);
 
@@ -55,3 +55,5 @@ function showResult() {
 
     }
 }
+
+exports.showResult = showResult;
