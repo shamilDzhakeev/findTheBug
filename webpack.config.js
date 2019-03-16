@@ -3,7 +3,7 @@ const distPath = path.join(__dirname, '/public');
 
 module.exports = {
     entry: {
-        main: './src/index.js'
+        main: './dist/index.js'
       },
       output: {
         filename: 'main.js',

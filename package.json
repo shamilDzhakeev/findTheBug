@@ -4,8 +4,9 @@
   "description": "for testing purposes",
   "main": "mainscript.js",
   "scripts": {
-    "build": "webpack --mode production -p",
-    "dev": "webpack --mode development"
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "watch": "babel src -d dist --presets es2015"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,9 @@
   },
   "homepage": "https://github.com/shamilDzhakeev/findTheBug#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   }
